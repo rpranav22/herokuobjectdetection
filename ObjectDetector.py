@@ -1,6 +1,5 @@
 import cv2 as cv
 import numpy
-import tensorflow
 
 classNames = {0: 'background',
               1: 'person', 2: 'bicycle', 3: 'car', 4: 'motorcycle', 5: 'airplane', 6: 'bus',

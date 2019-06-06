@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08aa88b2-4d9b-4d6a-80ec-8b8e228b5413" name="Default" comment="" />
+    <list default="true" id="08aa88b2-4d9b-4d6a-80ec-8b8e228b5413" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/ObjectDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/ObjectDetector.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +33,8 @@
       <file leaf-file-name="ObjectDetector.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ObjectDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="15">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -53,8 +55,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ObjectDetector.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/ObjectDetector.py" />
       </list>
     </option>
   </component>
@@ -203,8 +205,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ObjectDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
