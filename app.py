@@ -1,32 +1,23 @@
 from ObjectDetector import Detector
-import io
-
-from flask import Flask, render_template, request
-
-from PIL import Image
-from flask import send_file
+from flask import Flask, render_template, Response
+# from camera import VideoCamera
 
 app = Flask(__name__)
 
-detector = Detector()
-
-
-# detector.detectNumberPlate('twocar.jpg')
-
-
-@app.route("/")
+@app.route('/')
 def index():
     return render_template('index.html')
 
+def gen(camera):
+    while True:
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-@app.route("/", methods=['POST'])
-def upload():
-    if request.method == 'POST':
-        file = Image.open(request.files['file'].stream)
-        img = detector.detectObject(file)
-        return send_file(io.BytesIO(img),attachment_filename='image.jpg',mimetype='image/jpg')
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(Detector()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
-if __name__ == "__main__":
-    print("Hello World")
-    app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
