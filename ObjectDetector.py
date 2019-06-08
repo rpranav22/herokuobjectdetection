@@ -1,13 +1,6 @@
 import cv2 as cv
-import numpy
-from imutils.video import VideoStream
-from imutils.video import FPS
 import numpy as np
-import argparse
 import imutils
-import time
-
-
 
 class Detector:
     def __init__(self):

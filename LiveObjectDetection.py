@@ -1,5 +1,4 @@
 import time
-import zmq
 import cv2
 import imutils
 import numpy as np
