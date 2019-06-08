@@ -9,7 +9,7 @@ class Detector:
         self.net = cv.dnn.readNetFromCaffe('model/MobileNetSSD_deploy.prototxt.txt',
                                             'model/MobileNetSSD_deploy.caffemodel')
 
-    def detectObject(self, imName):
+    def detectObject(self):
         CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
                    "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
                    "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
