@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
 import imutils
+from scipy import misc
 
 class Detector:
     def __init__(self):
@@ -25,7 +26,7 @@ class Detector:
             # so we must encode it into JPEG in order to correctly display the
             # video stream.
             frame = imutils.resize(frame, width=400)
-
+            # print(type(frame))
             # grab the frame dimensions and convert it to a blob
             (h, w) = frame.shape[:2]
             blob = cv.dnn.blobFromImage(cv.resize(frame, (300, 300)),
@@ -59,6 +60,8 @@ class Detector:
                     y = startY - 15 if startY - 15 > 15 else startY + 15
                     cv.putText(frame, label, (startX, y),
                                 cv.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
+        else:
+            frame = misc.imread('loading.jpeg')
         ret, jpeg = cv.imencode('.jpg', frame)
         return jpeg.tobytes()
 
