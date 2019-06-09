@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 import imutils
-from scipy import misc
+import imageio
 
 class Detector:
     def __init__(self):
@@ -21,6 +21,8 @@ class Detector:
         success, frame = self.video.read()
 
         if success is True:
+            fr = imageio.imread('loading.jpeg')
+            print("lol", type(np.array(fr)))
             # print(success, frame)
             # We are using Motion JPEG, but OpenCV defaults to capture raw images,
             # so we must encode it into JPEG in order to correctly display the
@@ -61,7 +63,7 @@ class Detector:
                     cv.putText(frame, label, (startX, y),
                                 cv.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
         else:
-            frame = misc.imread('loading.jpeg')
+            frame = imageio.imread('loading.jpeg')
         ret, jpeg = cv.imencode('.jpg', frame)
         return jpeg.tobytes()
 

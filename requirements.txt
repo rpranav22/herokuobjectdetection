@@ -4,4 +4,4 @@ flask
 pillow
 gunicorn
 imutils
-scipy
+imageio
