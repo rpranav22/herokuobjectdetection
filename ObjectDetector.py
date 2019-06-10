@@ -23,33 +23,19 @@ class Detector:
         if success is True:
             fr = imageio.imread('loading.jpeg')
             print("lol", type(np.array(fr)))
-            # print(success, frame)
-            # We are using Motion JPEG, but OpenCV defaults to capture raw images,
-            # so we must encode it into JPEG in order to correctly display the
-            # video stream.
             frame = imutils.resize(frame, width=400)
-            # print(type(frame))
-            # grab the frame dimensions and convert it to a blob
+
             (h, w) = frame.shape[:2]
             blob = cv.dnn.blobFromImage(cv.resize(frame, (300, 300)),
                                          0.007843, (300, 300), 127.5)
 
-            # pass the blob through the network and obtain the detections and
-            # predictions
             self.net.setInput(blob)
             detections = self.net.forward()
 
             for i in np.arange(0, detections.shape[2]):
-                # extract the confidence (i.e., probability) associated with
-                # the prediction
                 confidence = detections[0, 0, i, 2]
 
-                # filter out weak detections by ensuring the `confidence` is
-                # greater than the minimum confidence
                 if confidence > 0.5:
-                    # extract the index of the class label from the
-                    # `detections`, then compute the (x, y)-coordinates of
-                    # the bounding box for the object
                     idx = int(detections[0, 0, i, 1])
                     box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
                     (startX, startY, endX, endY) = box.astype("int")
